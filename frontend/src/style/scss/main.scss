@@ -1,0 +1,28 @@
+// SETUP
+@import 'setup/typography';
+@import 'setup/variables';
+@import 'setup/mixins';
+@import 'setup/functions';
+
+// BASICS
+@import 'basics/helpers';
+@import 'basics/base';
+@import 'basics/layout';
+@import 'basics/transitions';
+
+@import 'components/element-override.scss';
+
+//COMPONENTS
+@import 'components/button';
+@import 'components/mainHeader.scss';
+@import 'components/app.scss';
+@import 'components/about.scss';
+@import 'components/toy-edit.scss';
+@import 'components/dashboard.scss';
+@import 'components/review-edit.scss';
+@import 'components/error-list.scss';
+@import 'components/toy-preview.scss';
+@import 'components/toy-filter.scss';
+@import 'components/toy-review-list.scss';
+
+    

@@ -1,0 +1,19 @@
+
+.dashboard{
+    display:flex;
+    flex-flow: column;
+    text-align: center;
+    flex-grow: 1;
+    .chart-wrapper{
+        display:flex;
+        flex-flow: column;
+        width:50%;
+        margin:0 auto;
+        margin-block-end:15px;
+    }
+    h1{
+      font-size: rem(24px);
+    }
+}
+
+

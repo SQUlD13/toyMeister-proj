@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Redressed&display=swap");
+/* Media queries Breakpoint mixins */
+/* Media  Mixins */
+.site-block {
+  margin-bottom: 1.25rem; }
+
+.ratio-16-9 {
+  position: relative;
+  overflow: hidden; }
+  .ratio-16-9:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 56%; }
+  .ratio-16-9 > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .ratio-16-9 > img {
+    height: 100%;
+    object-fit: cover; }
+
+.ratio-square {
+  position: relative;
+  overflow: hidden; }
+  .ratio-square:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 100%; }
+  .ratio-square > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .ratio-square > img {
+    height: 100%;
+    object-fit: cover; }
+
+.ratio-card {
+  position: relative;
+  overflow: hidden; }
+  .ratio-card:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 80%; }
+  .ratio-card > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .ratio-card > img {
+    height: 100%;
+    object-fit: cover; }
+
+.ratio-poster {
+  position: relative;
+  overflow: hidden; }
+  .ratio-poster:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 150%; }
+  .ratio-poster > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .ratio-poster > img {
+    height: 100%;
+    object-fit: cover; }
+
+.clean-list {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.clean-list > *:not(:last-child) {
+  margin-block-end: 10px; }
+
+/* FLEX - BASE */
+.flex {
+  display: flex; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.column {
+  flex-direction: column; }
+
+/* ALIGNMET/CONTENT */
+.jcc {
+  justify-content: center; }
+
+.aic {
+  align-items: center; }
+
+.space-between {
+  justify-content: space-between; }
+
+.space-evenly {
+  justify-content: space-evenly; }
+
+/* FLEX-GROW */
+.flex-1 {
+  flex-grow: 1; }
+
+.flex-2 {
+  flex-grow: 2; }
+
+.flex-4 {
+  flex-grow: 4; }
+
+.flex-8 {
+  flex-grow: 8; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  color: #43f4a1; }
+
+body {
+  margin: 0;
+  background-size: 180px;
+  background-attachment: fixed;
+  color: #03351e; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Merriweather,serif;
+  margin: 0 0 1rem;
+  font-weight: 800; }
+
+h1 {
+  font-size: 3.125rem; }
+
+p {
+  max-width: 48ch;
+  margin: 0 0 1rem; }
+
+img {
+  width: 100%; }
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 2rem 1fr 2rem; }
+  .main-layout > * {
+    grid-column: 2; }
+  .main-layout > .full {
+    grid-column: 1 / -1; }
+  @media (min-width: 460px) {
+    .main-layout {
+      grid-template-columns: minmax(2rem, 1fr) minmax(auto, 460px) minmax(2rem, 1fr); } }
+  @media (min-width: 740px) {
+    .main-layout {
+      grid-template-columns: minmax(2rem, 1fr) minmax(auto, 740px) minmax(2rem, 1fr); } }
+  @media (min-width: 960px) {
+    .main-layout {
+      grid-template-columns: minmax(2rem, 1fr) minmax(auto, 960px) minmax(2rem, 1fr); } }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(237px, 1fr));
+  grid-gap: 16px;
+  grid-auto-flow: dense;
+  grid-auto-rows: 300px; }
+  .card-grid > * {
+    position: relative;
+    overflow: hidden; }
+    .card-grid > *:before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 100%; }
+    .card-grid > * > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; }
+    .card-grid > * > img {
+      height: 100%;
+      object-fit: cover; }
+  .card-grid > *:nth-child(3n) {
+    grid-row: span 2; }
+  .card-grid > *:nth-child(4n) {
+    grid-column: span 2; }
+
+.error-list {
+  margin-block-end: 10px;
+  padding: 0;
+  list-style: none; }
+
+.error-list .validation-error {
+  font-style: italic;
+  color: #c24e4e; }
+
+.toy-preview {
+  display: flex;
+  flex-flow: column; }
+  .toy-preview h1 {
+    font-size: 2rem; }
+  .toy-preview p {
+    align-self: center;
+    justify-self: center; }

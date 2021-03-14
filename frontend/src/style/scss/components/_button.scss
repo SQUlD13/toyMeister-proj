@@ -1,0 +1,33 @@
+
+button{
+    border:5px solid transparent;
+    border-radius: 5px;
+    outline: 0;
+    background-color: $main-color;
+    color: set-color($main-color,70);
+    margin:0 5px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size:rem(16px);
+    padding:5px;
+    transition: border .2s linear;
+    
+    &:hover{
+        border:5px solid rgba(darken($main-color,$darken-amount),0.55);
+        background-color: $main-color;
+        color: set-color($main-color,67);
+        transition: border .2s linear;
+    }
+    &:focus{
+        border:5px solid darken($main-color,$darken-amount);
+        color:set-color($main-color,67);
+        border-color:darken($main-color,$darken-amount);
+        transition: border .2s linear;
+    }
+    &:active{
+        background-color: darken($main-color,$darken-amount);
+        color:set-color($main-color,60);
+        transition: border .2s linear;
+    }
+
+}

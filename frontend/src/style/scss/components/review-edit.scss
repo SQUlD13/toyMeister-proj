@@ -1,0 +1,26 @@
+.review-edit{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    &>*:not(button){
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        width:100%;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-family:Merriweather,serif;
+
+        textarea{
+            width:100%;
+            height:3rem;
+            resize: none;
+            border-radius: 8px;
+            padding:5px;
+            border:2px $main-color solid;
+            font-family: 'Open-sans',sans-serif;
+        }
+    }
+}

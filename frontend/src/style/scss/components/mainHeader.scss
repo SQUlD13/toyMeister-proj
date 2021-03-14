@@ -1,0 +1,39 @@
+.main-header{
+  z-index: 1000;
+  position:relative;
+  background:$secondary-color;
+  display:flex;
+  justify-content: space-between;
+  &::before{
+    content:'';
+    background:$secondary-color;
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:200vw;
+    transform:translateX(-50%);
+    z-index:-1;
+  }
+  nav {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      &>*:not(:last-child){
+          margin-inline-end: 5px;
+          &:after{
+              content:'|';
+              margin-inline-start:5px;
+              color:$black;
+          }
+      }
+      
+    a{
+      font-weight: bold;
+    color: $black;
+    }
+    a.router-link-exact-active {
+    color: $main-color;
+      }
+  }
+}

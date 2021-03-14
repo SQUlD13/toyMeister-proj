@@ -1,0 +1,20 @@
+.review-list{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    *{
+        overflow-y: auto;
+        &>*{
+            font-weight: bold;
+            span{
+                font-weight: normal;
+                color:darken($main-color,20%)
+            }
+            &:first-child{
+                text-transform: capitalize;
+            }
+        }
+    }
+}

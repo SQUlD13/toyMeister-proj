@@ -1,0 +1,15 @@
+.toy-edit{
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    .type-select{
+        width:100%;
+        margin-block: 5px;
+    }
+    .el-switch{
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+    }
+}

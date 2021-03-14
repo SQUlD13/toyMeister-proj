@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color: $main-color;
+}
+
+body {
+    overflow:hidden;
+    margin: 0;
+    height:100vh;
+    width:100vw;
+    // background-size: 180px;
+    // background-attachment: fixed;
+    color: darken($main-color,50);
+    background: $main-color;
+    font-family: 'Open-sans',sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:Merriweather,serif;
+    margin: 0 0 1rem;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: rem(36px);
+}
+
+p {
+    max-width: 48ch;
+    margin: 0 0 1rem;
+}
+
+img {
+    width: 100%;
+}

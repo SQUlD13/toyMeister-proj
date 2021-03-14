@@ -1,0 +1,46 @@
+.el-switch.is-checked .el-switch__core{
+    border-color:$main-color;
+    background-color:$main-color;
+}
+.el-switch__label.is-active{
+    color:darken($main-color,5);
+}
+.el-radio__input.is-checked .el-radio__inner{
+    border-color:$main-color;
+    background-color:$main-color;
+}
+.el-radio__input.is-checked+.el-radio__label{
+    color:$main-color;
+}
+.el-pager li.active{
+    color:$main-color;
+}
+.el-pager li:hover{
+    color:lighten($main-color,5)
+}
+.el-pagination{
+    color:$black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 10px;
+}
+.el-pagination button:hover{
+    border:0;
+    color:lighten($main-color,5);
+}
+.el-slider__button{
+    border-color: $main-color;
+}
+.el-slider__bar{
+    background-color:lighten($main-color,15);
+}
+.el-select .el-input.is-focus .el-input__inner{
+    border-color:$main-color;
+}
+.el-input.is-active .el-input__inner, .el-input__inner:focus{
+    border-color:$main-color;
+}
+.el-select-dropdown__item.selected{
+    color:$main-color;
+}

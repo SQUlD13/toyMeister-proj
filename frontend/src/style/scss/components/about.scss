@@ -1,0 +1,10 @@
+#app .about{
+    &.page-content{
+        // padding:0;
+        h1{
+            font-size: rem(24px);
+            padding-inline: 15px;
+            padding-block-start: 5px;
+        }
+    }
+}

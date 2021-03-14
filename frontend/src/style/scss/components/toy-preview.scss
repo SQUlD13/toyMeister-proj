@@ -1,0 +1,19 @@
+
+.toy-preview{
+    display:flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+    
+    h1{
+        font-size: rem(28px);
+    }
+    h2{
+        font-size:rem(18px);
+    }
+    p{
+        align-self: center;
+        justify-self: center;
+        font-size: rem(16px);
+    }
+}
