@@ -1,7 +1,7 @@
 const toyService = require('./toy.service')
 const logger = require('../../services/logger.service')
+const { json } = require('express')
 
-var gMaxPage = 0
 
 async function getToy(req, res) {
     try {
@@ -16,16 +16,17 @@ async function getToy(req, res) {
 async function getToys(req, res) {
     try {
         const page = (req.query?.page) ? JSON.parse(req.query.page) : null
+        const isAsc = (req.query?.isAsc) ? JSON.parse(req.query.isAsc) : true
         const filterBy = {
             q: req.query?.q || '',
             type: req.query?.type || [],
             inStock: req.query?.inStock || 'null',
+            sortBy: req.query?.sortBy || 'name',
+            isAsc,
             page
         }
         //console.log('getting toys with filter', filterBy)
         const ans = await toyService.query(filterBy)
-
-
         res.send(ans)
     } catch (err) {
         console.log(err)

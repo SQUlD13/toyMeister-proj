@@ -29,21 +29,16 @@ async function query(filterBy = {}) {
         // console.log("🚀 ~ file: toy.service.js ~ line 30 ~ query ~ toyLength", toyLength)
         if (skip > toyLength) { skip = 0 }
 
-        var toys = await collection.find(criteria).skip(skip).limit(limit).toArray()
+
+        const order = (filterBy.isAsc) ? 1 : -1
+        sort = (filterBy.sortBy === 'price') ? { 'price': order } : { 'type.txt': order }
+
+        var toys = await collection.find(criteria).sort(sort).skip(skip).limit(limit).toArray()
 
         const maxPage = Math.floor(toyLength / limit)
         console.log("🚀 ~ file: toy.service.js ~ line 33 ~ query ~ maxPage", maxPage)
 
         return { toys, maxPage }
-        // users = users.map(user => {
-        //     delete user.password
-        //     user.isHappy = true
-        //     user.createdAt = ObjectId(user._id).getTimestamp()
-        //     // Returning fake fresh data
-        //     // user.createdAt = Date.now() - (1000 * 60 * 60 * 24 * 3) // 3 days ago
-        //     return user
-        // })
-        // return users
     } catch (err) {
         logger.error('cannot find toys', err)
         throw err
@@ -54,13 +49,6 @@ async function getById(toyId) {
     try {
         const collection = await dbService.getCollection('toy')
         const toy = await collection.findOne({ '_id': ObjectId(toyId) })
-
-        // user.givenReviews = await reviewService.query({ byUserId: ObjectId(user._id) })
-        // user.givenReviews = user.givenReviews.map(review => {
-        //     delete review.byUser
-        //     return review
-        // })
-
         return toy
     } catch (err) {
         logger.error(`while finding toy ${toyId}`, err)
@@ -116,6 +104,7 @@ async function add(toy) {
 
 function _buildCriteria(filterBy) {
     const criteria = {}
+    console.log("🚀 ~ file: toy.service.js ~ line 102 ~ _buildCriteria ~ filterBy", filterBy)
     if (filterBy.q) { // Text filtering
         const txtCriteria = { $regex: filterBy.q, $options: 'i' }
         criteria.name = txtCriteria

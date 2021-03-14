@@ -5,6 +5,10 @@
       <h2>Price:</h2>
       <p class="light">{{ toy.price }}</p>
     </div>
+    <div class="flex center">
+      <h2>Type:</h2>
+      <p class="light">{{ toy.type.txt }}</p>
+    </div>
     <toyReviewList
       :toy="toy"
       :reviews="reviews"

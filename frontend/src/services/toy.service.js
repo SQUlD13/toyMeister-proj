@@ -6,7 +6,7 @@ import { httpService } from './http.service.js'
 const KEY = 'toyDB'
 const BASE_URL = (process.env.NODE_ENV !== 'development') ? '/api/toy/' : 'http://localhost:3030/api/toy/'
 
-var gFilterBy = { q: '', type: null, inStock: 'null', page:{size:5,idx:0}, isAsc: 'true', sortBy: 'name' }
+var gFilterBy = { q: '', type: null, inStock: 'null', page: { size: 5, idx: 0 }, isAsc: 'true', sortBy: 'name' }
 
 //_createToys()
 
@@ -30,7 +30,7 @@ function setFilter(filter) {
     // console.log("🚀 ~ file: toy.service.js ~ line 30 ~ setFilter ~ BASE_URL + 'filter'", BASE_URL + 'filter')
     // return axios.put(BASE_URL + 'filter', filter)
     //     .then(({ data }) => { console.log('filter set to',data,'in service');gFilterBy = data; return data })
-    gFilterBy = {...gFilterBy,...filter}
+    gFilterBy = { ...gFilterBy, ...filter }
     return gFilterBy
 }
 
@@ -40,10 +40,12 @@ async function query() {
     //     .then(({ data }) => {
     //         return data
     //     })
+    console.log('querying with filter', gFilterBy)
     try {
         const ans = await httpService.get('toy', { params: gFilterBy })
         return ans
     } catch (err) {
+        console.log(err)
         throw err
     }
 }
@@ -56,6 +58,7 @@ async function queryAll() {
         console.log('query all ans', ans)
         return ans
     } catch (err) {
+        console.log(err)
         throw err
     }
 }
