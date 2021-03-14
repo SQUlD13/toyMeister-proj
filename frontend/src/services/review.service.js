@@ -11,7 +11,6 @@ export default {
 }
 
 async function queryByToyId(toyId) {
-    console.log("🚀 ~ file: review.service.js ~ line 13 ~ query ~ toyId", toyId)
     try {
         const reviews = await httpService.get(`review/toy/${toyId}`)
         return reviews
@@ -19,12 +18,11 @@ async function queryByToyId(toyId) {
         throw err
     }
 }
-async function query(id){
-console.log("🚀 ~ file: review.service.js ~ line 24 ~ query ~ id", id)
-    try{
+async function query(id) {
+    try {
         const review = await httpService.get(`review/${id}`)
         return review
-    }catch(err){
+    } catch (err) {
         throw err
     }
 }
@@ -40,7 +38,6 @@ async function remove(id) {
 }
 
 async function update(review) {
-    console.log("🚀 ~ file: review.service.js ~ line 43 ~ update ~ review", review)
     // console.log("🚀 ~ file: review.service.js ~ line 33 ~ update ~ toyId", review.aboutToy._id,' userId',review.byUser._id)
     const id = review._id
     try {
@@ -60,3 +57,4 @@ async function add(review) {
         throw err
     }
 }
+

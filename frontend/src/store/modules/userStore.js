@@ -61,7 +61,8 @@ export default {
         },
         async signup(context, { credentials }) {
             try {
-                const user = await userService.register({ username: this.username, password: this.password })
+                const { username, password } = credentials
+                const user = await userService.register({ username, password })
                 context.dispatch({ type: 'login', credentials })
             } catch (err) {
                 throw err

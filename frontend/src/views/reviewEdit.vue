@@ -20,13 +20,13 @@ export default {
     };
   },
   async created() {
-    const review = await reviewService.query(this.id);
-    console.log(
-      "🚀 ~ file: reviewEdit.vue ~ line 24 ~ created ~ review",
-      review
-    );
-    this.review = review;
-    this.txt = review.txt;
+    try {
+      const review = await reviewService.query(this.id);
+      this.review = review;
+      this.txt = review.txt;
+    } catch (err) {
+      console.log(err);
+    }
   },
   computed: {
     id() {

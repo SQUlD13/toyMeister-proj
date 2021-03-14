@@ -26,10 +26,11 @@ export default {
     };
   },
   methods: {
-    register() {
+    async register() {
       console.log("Button going to frontend service", this.username);
-      const credentials = { username, password };
-      this.$store.dispatch({ type: "signup", credentials });
+      const credentials = { username: this.username, password: this.password };
+      await this.$store.dispatch({ type: "signup", credentials });
+      this.$router.push("/toy");
     },
   },
 };
